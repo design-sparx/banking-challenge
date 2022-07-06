@@ -13,8 +13,8 @@ import {
 
 const useStyles = createStyles((theme) => ({
     root: {
-        paddingTop: theme.spacing.xl * 1.5,
-        paddingBottom: theme.spacing.xl * 1.5,
+        marginTop: theme.spacing.md,
+        marginBottom: theme.spacing.md,
     },
 
     value: {

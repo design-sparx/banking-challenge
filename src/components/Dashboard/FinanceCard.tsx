@@ -40,7 +40,7 @@ const FinanceCard = () => {
     }, [])
 
     return (
-        <Paper withBorder p="md" radius="md" mb="md">
+        <Paper withBorder p="md" mb="md">
             <Text align="center" weight={700} className={classes.title} my="md">
                 My finances
             </Text>
