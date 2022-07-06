@@ -36,12 +36,7 @@ export default function MonthCard() {
     const { classes } = useStyles()
 
     return (
-        <Paper
-            radius="md"
-            withBorder
-            className={classes.card}
-            mb={ICON_SIZE / 3}
-        >
+        <Paper withBorder className={classes.card} mt="xl">
             <ThemeIcon
                 className={classes.icon}
                 size={ICON_SIZE}

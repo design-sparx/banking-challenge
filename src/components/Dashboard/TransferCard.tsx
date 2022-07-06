@@ -46,8 +46,8 @@ const TransferCard = ({ results }: TransferCardProps) => {
     })
 
     return (
-        <Card withBorder>
-            <Text align="center" weight={700} className={classes.title} my="md">
+        <Card withBorder mt="md">
+            <Text align="left" weight={700} className={classes.title} my="md">
                 Quick transfers
             </Text>
             <AvatarsGroup limit={10} mb="md">
@@ -87,9 +87,7 @@ const TransferCard = ({ results }: TransferCardProps) => {
             </div>
             <Group mt="md">
                 <Button leftIcon={<Send />}>Send money</Button>
-                <Button leftIcon={<EditOff />} variant="subtle">
-                    Save as draft
-                </Button>
+                <Button variant="subtle">Save as draft</Button>
             </Group>
         </Card>
     )

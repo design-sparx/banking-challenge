@@ -53,7 +53,11 @@ interface StatsSegmentsProps {
     }[]
 }
 
-export default function MyCards({ total, diff, data }: StatsSegmentsProps) {
+export default function ExpenditureCards({
+    total,
+    diff,
+    data,
+}: StatsSegmentsProps) {
     const { classes } = useStyles()
 
     const segments = data.map((segment) => ({
@@ -87,7 +91,7 @@ export default function MyCards({ total, diff, data }: StatsSegmentsProps) {
     ))
 
     return (
-        <Card withBorder p="md" radius="md" mb="md">
+        <Card withBorder p="md" mt="md">
             <Group position="apart">
                 <Group align="flex-end" spacing="xs">
                     <Text size="xl" weight={700}>

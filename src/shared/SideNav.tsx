@@ -78,7 +78,7 @@ const useStyles = createStyles((theme, _params, getRef) => {
 const data = [
     { link: '', label: 'Home', icon: Home },
     { link: '', label: 'Accounts', icon: User },
-    { link: '', label: 'MyCards', icon: CreditCard },
+    { link: '', label: 'ExpenditureCards', icon: CreditCard },
     { link: '', label: 'Payments', icon: Cash },
 ]
 

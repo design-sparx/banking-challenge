@@ -80,9 +80,9 @@ export default function InfoCard({
     return (
         <Card
             withBorder
-            radius="md"
             className={cx(classes.card, className)}
             {...others}
+            mt="md"
         >
             <Card.Section>
                 <a {...linkProps}>
