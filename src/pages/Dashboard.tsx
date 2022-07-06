@@ -17,6 +17,7 @@ import { ShortcutsCard } from '../components/Dashboard/ShortcutsCard'
 import { InvoiceTable } from '../components/Dashboard/InvoiceTable'
 import { InvoicesData } from '../mocks/InvoicesData'
 
+
 const Dashboard = () => {
     return (
         <Wrapper title="dashboard">
