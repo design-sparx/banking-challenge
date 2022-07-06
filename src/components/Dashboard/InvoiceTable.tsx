@@ -50,7 +50,7 @@ interface TableReviewsProps {
     }[]
 }
 
-export function InvoiceTable({ data }: TableReviewsProps) {
+export default function InvoiceTable({ data }: TableReviewsProps) {
     const { classes, theme } = useStyles()
 
     const rows = data.map((row, index) => {

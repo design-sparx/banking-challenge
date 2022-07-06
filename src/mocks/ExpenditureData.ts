@@ -1,4 +1,4 @@
-export const CardsData = {
+export const ExpenditureData = {
     total: '345,765',
     diff: 18,
     data: [

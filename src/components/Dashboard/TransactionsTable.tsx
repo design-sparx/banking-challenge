@@ -56,7 +56,7 @@ interface TableReviewsProps {
     }[]
 }
 
-export function TransactionsTable({ data }: TableReviewsProps) {
+export default function TransactionsTable({ data }: TableReviewsProps) {
     const { classes, theme } = useStyles()
 
     const rows = data.map((row) => {
