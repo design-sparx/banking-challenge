@@ -2,14 +2,15 @@ import React from 'react'
 import './App.css'
 import { MantineProvider } from '@mantine/core'
 import { Route, Routes } from 'react-router-dom'
-import { DashboardPage } from './pages'
+import { CardsPage, DashboardPage } from './pages'
 
 function App() {
     return (
         <div className="App">
             <MantineProvider>
                 <Routes>
-                    <Route path="/" element={<DashboardPage />}></Route>
+                    <Route path="/" element={<DashboardPage />} />
+                    <Route path="/cards" element={<CardsPage />} />
                 </Routes>
             </MantineProvider>
         </div>
