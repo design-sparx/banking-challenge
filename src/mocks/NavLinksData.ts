@@ -1,20 +1,24 @@
 export const NavLinksData = {
     links: [
         {
-            link: '/about',
-            label: 'Features',
+            link: '/about-us',
+            label: 'about',
         },
         {
-            link: '/pricing',
-            label: 'Pricing',
+            link: '/help',
+            label: 'investing',
         },
         {
-            link: '/learn',
-            label: 'Learn',
+            link: '/help',
+            label: 'money transfer',
         },
         {
-            link: '/community',
-            label: 'Community',
+            link: '/help',
+            label: 'blog',
+        },
+        {
+            link: '/contact-us',
+            label: 'contact us',
         },
     ],
 }
