@@ -19,7 +19,9 @@ const CardsView = () => {
     const { classes } = useStyles()
     return (
         <>
-            <Title align="left">Personal cards</Title>
+            <Title align="left" mb="md" order={2}>
+                Personal cards
+            </Title>
             <div className={classes.cardsWrapper}>
                 <Image src={CreditCardsImg} height={160} alt="Norway" />
                 <Image src={CreditCardsImg1} height={160} alt="Norway" />

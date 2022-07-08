@@ -20,13 +20,13 @@ const TransactionsGroup = ({ data }: TransactionsGroupProps) => {
                 cardNumber={d.cardNumber}
                 type={d.type}
                 balance={d.balance}
-            ></TransactionsTable>
+            />
         )
     })
 
     return (
         <Card withBorder mt="md">
-            <Title order={3} align="left">
+            <Title order={3} align="left" mb="md">
                 Last Transactions
             </Title>
             {items}

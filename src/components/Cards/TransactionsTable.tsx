@@ -17,6 +17,7 @@ import {
     Menu,
     Paper,
     Divider,
+    Button,
 } from '@mantine/core'
 import {
     AntennaBars1,
@@ -34,18 +35,21 @@ import {
     Trash,
     UserPlus,
 } from 'tabler-icons-react'
+import ViewCardDrawer from './ViewCardDrawer'
 
 interface UsersTableProps {
     type: string
     cardNumber: string
     balance: number
     transactions: {
-        title: string
-        description: string
-        type: string
         amount: number
+        commission: string
         date: string
+        description: string
         id: string
+        title: string
+        type: string
+        vat: string
     }[]
 }
 
@@ -99,27 +103,54 @@ export default function TransactionsTable({
 }: UsersTableProps) {
     const { classes, cx } = useStyles()
     const [scrolled, setScrolled] = useState(false)
+    const [isOpen, setIsOpen] = useState(false)
+    const [contextData, setContextData] = useState<{
+        amount: number
+        commission: string
+        date: string
+        description: string
+        id: string
+        title: string
+        type: string
+        vat: string
+    }>({
+        commission: '',
+        vat: '',
+        amount: 0,
+        date: '',
+        description: '',
+        id: '',
+        title: '',
+        type: '',
+    })
 
     const rows = transactions.map((d) => {
         let icons = [<CreditCard />, <Receipt />, <UserPlus />, <ArrowBack />],
             color
         if (d.type == 'payment') {
             color = 'green'
+        } else if (d.type == 'bill') {
+            color = 'indigo'
         } else {
-            color = 'violet'
+            color = 'grape'
         }
 
         return (
             <tr key={d.id} className={classes.row}>
                 <td>
-                    <Group>
-                        <ThemeIcon variant="light" color="gray">
-                            {icons[Math.floor(Math.random() * icons.length)]}
-                        </ThemeIcon>
-                        <Text weight={500} transform="capitalize">
-                            {d.title}
-                        </Text>
-                    </Group>
+                    <Button
+                        variant="subtle"
+                        leftIcon={
+                            icons[Math.floor(Math.random() * icons.length)]
+                        }
+                        style={{ textTransform: 'capitalize' }}
+                        onClick={() => {
+                            setIsOpen(true)
+                            setContextData(d)
+                        }}
+                    >
+                        {d.title}
+                    </Button>
                 </td>
                 <td>{d.description}</td>
                 <td>
@@ -185,11 +216,7 @@ export default function TransactionsTable({
                     sx={{ height: 300 }}
                     onScrollPositionChange={({ y }) => setScrolled(y !== 0)}
                 >
-                    <Table
-                        sx={{ minWidth: 800 }}
-                        verticalSpacing="sm"
-                        highlightOnHover
-                    >
+                    <Table sx={{ minWidth: 800 }} verticalSpacing="sm">
                         <thead
                             className={cx(classes.header, {
                                 [classes.scrolled]: scrolled,
@@ -202,6 +229,11 @@ export default function TransactionsTable({
                 </ScrollArea>
             </Paper>
             <Divider my="xs" label={type} labelPosition="center" />
+            <ViewCardDrawer
+                isOpen={isOpen}
+                handleClose={() => setIsOpen(false)}
+                data={contextData}
+            />
         </>
     )
 }

@@ -29,7 +29,7 @@ export const CardsData = {
                 {
                     title: 'electric bill',
                     description: 'clearing electricity bill',
-                    type: 'payment',
+                    type: 'bill',
                     amount: 40.45,
                     date: '7/5/2022',
                     vat: '5%',
@@ -59,7 +59,7 @@ export const CardsData = {
                 {
                     title: 'Health insurance',
                     description: 'Health insurance',
-                    type: 'payment',
+                    type: 'bill',
                     amount: 35,
                     date: '6/30/2022',
                     vat: '10%',
