@@ -108,7 +108,6 @@ const GetStarted = ({ data }: FeaturesGridProps) => {
                             color="blue"
                             className={classes.action}
                             rightIcon={<ChevronRight size={18} />}
-                            radius="xs"
                         >
                             learn more
                         </Button>

@@ -81,11 +81,7 @@ export function Feature({
                 {title}
             </Text>
             <Text size="sm">{description}</Text>
-            <Button
-                variant="outline"
-                className={classes.cardAction}
-                radius="xs"
-            >
+            <Button variant="outline" className={classes.cardAction}>
                 {action}
             </Button>
         </Card>

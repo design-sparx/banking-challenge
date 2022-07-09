@@ -8,6 +8,7 @@ import {
     DashboardPage,
     FaqsPage,
     LandingPage,
+    Page404,
 } from './pages'
 
 function App() {
@@ -18,8 +19,9 @@ function App() {
                     <Route path="/" element={<LandingPage />} />
                     <Route path="/home" element={<DashboardPage />} />
                     <Route path="/cards" element={<CardsPage />} />
-                    <Route path="/faqs" element={<FaqsPage />} />
+                    <Route path="/help" element={<FaqsPage />} />
                     <Route path="/contact-us" element={<ContactUsPage />} />
+                    <Route path="*" element={<Page404 />} />
                 </Routes>
             </MantineProvider>
         </div>

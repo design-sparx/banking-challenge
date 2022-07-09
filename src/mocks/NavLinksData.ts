@@ -13,12 +13,12 @@ export const NavLinksData = {
             label: 'money transfer',
         },
         {
-            link: '/help',
-            label: 'blog',
-        },
-        {
             link: '/contact-us',
             label: 'contact us',
+        },
+        {
+            link: '/help',
+            label: 'support',
         },
     ],
 }

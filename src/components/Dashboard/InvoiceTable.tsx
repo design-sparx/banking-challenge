@@ -66,7 +66,7 @@ export default function InvoiceTable({ data }: TableReviewsProps) {
         return (
             <tr key={row.title} className={classes.row}>
                 <td>
-                    <Text>{index++}</Text>
+                    <Text>{++index}</Text>
                 </td>
                 <td>{new Date().toDateString()}</td>
                 <td>
@@ -98,13 +98,13 @@ export default function InvoiceTable({ data }: TableReviewsProps) {
                 >
                     Invoices
                 </Text>
-                <Button leftIcon={<Plus />}>New Invoice</Button>
+                <Button leftIcon={<Plus size={18} />}>New Invoice</Button>
             </div>
             <ScrollArea>
                 <Table sx={{ minWidth: 800 }} verticalSpacing="xs">
                     <thead>
                         <tr>
-                            <th>No</th>
+                            <th>#</th>
                             <th>Date</th>
                             <th>Client</th>
                             <th>Amount</th>

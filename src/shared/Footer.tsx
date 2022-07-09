@@ -14,6 +14,7 @@ import {
     BrandInstagram,
     ThreeDCubeSphere,
     BrandFacebook,
+    BrandLinkedin,
 } from 'tabler-icons-react'
 
 const useStyles = createStyles((theme) => ({
@@ -183,27 +184,43 @@ export default function Footer({ data }: FooterLinksProps) {
                     <Button
                         variant="subtle"
                         leftIcon={<BrandInstagram size={18} />}
+                        color="gray"
+                        size="xs"
                     >
                         Instagram
                     </Button>
                     <Button
                         variant="subtle"
                         leftIcon={<BrandTwitter size={18} />}
+                        color="gray"
+                        size="xs"
                     >
                         Twitter
                     </Button>
                     <Button
                         variant="subtle"
                         leftIcon={<BrandFacebook size={18} />}
+                        color="gray"
+                        size="xs"
                     >
                         Facebook
                     </Button>
                     <Button
                         variant="subtle"
                         leftIcon={<BrandYoutube size={18} />}
+                        color="gray"
+                        size="xs"
                     >
                         Youtube
                     </Button>
+                    <Button
+                        variant="subtle"
+                        leftIcon={<BrandLinkedin size={18} />}
+                        color="gray"
+                        size="xs"
+                    >
+                        LinkedIn
+                    </Button>{' '}
                 </Group>
             </Container>
         </footer>

@@ -2,22 +2,40 @@ import React, { useState } from 'react'
 import ContactForm from '../components/ContactUs/ContactForm'
 import { NavLinksData } from '../mocks/NavLinksData'
 import TopNavbar from '../shared/TopNavbar'
-import Footer from './Footer'
+import Footer from '../shared/Footer'
 import { FooterLinksData } from '../mocks/FooterLinksData'
 import CookiesBanner from '../shared/CookiesBanner'
+import AuthFormModal from '../components/Auth/AuthFormModal'
 
 const ContactUs = () => {
     const [cookiesOpen, setCookiesOpen] = useState(true)
+    const [authModalOpen, setAuthModalOpen] = useState(false)
 
-    const handleClose = () => {
+    const handleCookiesClose = () => {
         setCookiesOpen(false)
     }
+
+    const handleAuthModalClose = () => {
+        setAuthModalOpen(false)
+    }
+
+    const handleAuthModalOpen = () => {
+        setAuthModalOpen(true)
+    }
+
     return (
         <div>
-            <TopNavbar links={NavLinksData.links} />
+            <TopNavbar
+                links={NavLinksData.links}
+                handleAuthModalOpen={handleAuthModalOpen}
+            />
             <ContactForm />
             <Footer data={FooterLinksData.data}></Footer>
-            <CookiesBanner opened={cookiesOpen} onClose={handleClose} />
+            <CookiesBanner opened={cookiesOpen} onClose={handleCookiesClose} />
+            <AuthFormModal
+                opened={authModalOpen}
+                onClose={handleAuthModalClose}
+            />
         </div>
     )
 }

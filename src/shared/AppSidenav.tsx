@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { createStyles, Navbar, ScrollArea } from '@mantine/core'
+import { Anchor, createStyles, Navbar, ScrollArea } from '@mantine/core'
 import {
     BellRinging,
     Fingerprint,
@@ -54,6 +54,7 @@ const useStyles = createStyles((theme, _params, getRef) => {
 
             '&:hover': {
                 backgroundColor: theme.colors[theme.primaryColor][5],
+                textDecoration: 'none',
             },
         },
 
@@ -76,9 +77,9 @@ const useStyles = createStyles((theme, _params, getRef) => {
 })
 
 const data = [
-    { link: '', label: 'Home', icon: Home },
+    { link: '/home', label: 'Home', icon: Home },
     { link: '', label: 'Accounts', icon: User },
-    { link: '', label: 'ExpenditureCards', icon: CreditCard },
+    { link: '/cards', label: 'Cards', icon: CreditCard },
     { link: '', label: 'Payments', icon: Cash },
 ]
 
@@ -89,7 +90,7 @@ interface SideNavProps {
     width: { sm: number; lg: number }
 }
 
-export default function SideNav({
+export default function AppSidenav({
     p,
     hiddenBreakpoint,
     hidden,
@@ -99,20 +100,20 @@ export default function SideNav({
     const [active, setActive] = useState('Billing')
 
     const links = data.map((item) => (
-        <a
+        <Anchor
             className={cx(classes.link, {
                 [classes.linkActive]: item.label === active,
             })}
             href={item.link}
             key={item.label}
-            onClick={(event) => {
-                event.preventDefault()
+            onClick={() => {
+                // event.preventDefault()
                 setActive(item.label)
             }}
         >
             <item.icon className={classes.linkIcon} />
             <span>{item.label}</span>
-        </a>
+        </Anchor>
     ))
 
     return (
