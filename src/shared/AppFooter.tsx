@@ -7,11 +7,11 @@ import {
     ActionIcon,
 } from '@mantine/core'
 import {
+    BrandFacebook,
     BrandInstagram,
     BrandLinkedin,
     BrandTwitter,
     BrandYoutube,
-    ThreeDCubeSphere,
 } from 'tabler-icons-react'
 
 const useStyles = createStyles((theme) => ({
@@ -62,17 +62,45 @@ export default function AppFooter({ links }: FooterSimpleProps) {
         <Container fluid className={classes.inner}>
             <Group className={classes.links}>{items}</Group>
             <Group spacing={0} position="right" noWrap>
-                <ActionIcon size="lg">
+                <ActionIcon
+                    component="a"
+                    size="lg"
+                    href="https://twitter.com/kelvink_96"
+                    target="_blank"
+                >
                     <BrandTwitter size={18} />
                 </ActionIcon>
-                <ActionIcon size="lg">
+                <ActionIcon
+                    component="a"
+                    size="lg"
+                    href="https://www.youtube.com/channel/UCtSLVZBTdEw475v3NmKfQ3g"
+                    target="_blank"
+                >
                     <BrandYoutube size={18} />
                 </ActionIcon>
-                <ActionIcon size="lg">
+                <ActionIcon
+                    component="a"
+                    size="lg"
+                    href="https://www.instagram.com/kelvink_96/"
+                    target="_blank"
+                >
                     <BrandInstagram size={18} />
                 </ActionIcon>
-                <ActionIcon size="lg">
+                <ActionIcon
+                    component="a"
+                    size="lg"
+                    href="https://www.linkedin.com/in/kelvink96/"
+                    target="_blank"
+                >
                     <BrandLinkedin size={18} />
+                </ActionIcon>
+                <ActionIcon
+                    component="a"
+                    size="lg"
+                    href="https://www.facebook.com/kelvinkk96"
+                    target="_blank"
+                >
+                    <BrandFacebook size={18} />
                 </ActionIcon>
             </Group>
         </Container>

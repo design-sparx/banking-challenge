@@ -1,8 +1,6 @@
 import React, { ReactNode } from 'react'
 import { createStyles, Group, Paper, SimpleGrid, Text } from '@mantine/core'
 import {
-    UserPlus,
-    Discount2,
     Receipt2,
     Coin,
     ArrowUpRight,

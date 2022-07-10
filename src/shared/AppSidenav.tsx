@@ -1,20 +1,14 @@
 import React, { useState } from 'react'
 import { Anchor, createStyles, Navbar, ScrollArea } from '@mantine/core'
 import {
-    BellRinging,
-    Fingerprint,
-    Key,
     Settings,
-    TwoFA,
-    DatabaseImport,
-    Receipt2,
-    SwitchHorizontal,
     Logout,
     CreditCard,
     User,
     Home,
     Cash,
 } from 'tabler-icons-react'
+import { Link } from 'react-router-dom'
 
 const useStyles = createStyles((theme, _params, getRef) => {
     const icon = getRef('icon')
@@ -104,10 +98,10 @@ export default function AppSidenav({
             className={cx(classes.link, {
                 [classes.linkActive]: item.label === active,
             })}
-            href={item.link}
+            component={Link}
+            to={item.link}
             key={item.label}
             onClick={() => {
-                // event.preventDefault()
                 setActive(item.label)
             }}
         >

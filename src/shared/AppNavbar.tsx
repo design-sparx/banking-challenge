@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import {
     createStyles,
-    Container,
     Group,
     Burger,
     Menu,
@@ -9,9 +8,7 @@ import {
     Avatar,
     Text,
     Divider,
-    Input,
     ActionIcon,
-    Button,
     Anchor,
     TextInput,
     useMantineTheme,
@@ -22,19 +19,16 @@ import {
     ArrowRight,
     Bell,
     ChevronDown,
-    CodeMinus,
-    Heart,
     Logout,
-    Message,
     MessageCircle,
     PlayerPause,
     Search,
     Settings,
-    Star,
     SwitchHorizontal,
     ThreeDCubeSphere,
     Trash,
 } from 'tabler-icons-react'
+import { Link } from 'react-router-dom'
 
 const useStyles = createStyles((theme) => ({
     header: {
@@ -207,8 +201,8 @@ export default function AppNavbar({ user }: AppNavProps) {
                         Change account
                     </Menu.Item>
                     <Menu.Item
-                        component="a"
-                        href="/"
+                        component={Link}
+                        to="/"
                         icon={<Logout size={14} />}
                     >
                         Logout

@@ -8,11 +8,9 @@ import {
     Group,
     Input,
     Text,
-    TextInput,
-    Tooltip,
 } from '@mantine/core'
-import React, { useEffect, useState } from 'react'
-import { CreditCard, Edit, EditOff, Send } from 'tabler-icons-react'
+import React from 'react'
+import { CreditCard, Send } from 'tabler-icons-react'
 
 const useStyles = createStyles((theme) => ({
     title: {
