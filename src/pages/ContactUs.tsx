@@ -6,6 +6,7 @@ import Footer from '../shared/Footer'
 import { FooterLinksData } from '../mocks/FooterLinksData'
 import CookiesBanner from '../shared/CookiesBanner'
 import AuthFormModal from '../components/Auth/AuthFormModal'
+import { Helmet } from 'react-helmet'
 
 const ContactUs = () => {
     const [cookiesOpen, setCookiesOpen] = useState(true)
@@ -25,6 +26,9 @@ const ContactUs = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Netabank | Contact</title>
+            </Helmet>
             <TopNavbar
                 links={NavLinksData.links}
                 handleAuthModalOpen={handleAuthModalOpen}

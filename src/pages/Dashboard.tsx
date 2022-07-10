@@ -16,10 +16,14 @@ import { InvoicesData } from '../mocks/InvoicesData'
 import TransactionsTable from '../components/Dashboard/TransactionsTable'
 import InvoiceTable from '../components/Dashboard/InvoiceTable'
 import { TransactionsData } from '../mocks/TransactionsData'
+import { Helmet } from 'react-helmet'
 
 const Dashboard = () => {
     return (
         <Wrapper>
+            <Helmet>
+                <title>Netabank | Dashboard</title>
+            </Helmet>
             <Container fluid>
                 <Stats data={StatsData.data}></Stats>
                 <Grid>

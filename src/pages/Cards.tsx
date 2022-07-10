@@ -4,10 +4,14 @@ import { Container, Grid } from '@mantine/core'
 import CardsView from '../components/Cards/CardsView'
 import { CardsData } from '../mocks/CardsData'
 import TransactionsGroup from '../components/Cards/TransactionsGroup'
+import { Helmet } from 'react-helmet'
 
 const Cards = () => {
     return (
         <Wrapper>
+            <Helmet>
+                <title>Netabank | Cards</title>
+            </Helmet>
             <Container fluid>
                 <Grid>
                     <Grid.Col>
