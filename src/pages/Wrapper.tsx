@@ -7,19 +7,23 @@ import {
     MediaQuery,
     Burger,
     useMantineTheme,
+    Container,
 } from '@mantine/core'
-import TopNav from '../shared/TopNav'
+import AppNavbar from '../shared/AppNavbar'
 import { UserData } from '../mocks/UserData'
 import { NavLinksData } from '../mocks/NavLinksData'
-import SideNav from '../shared/SideNav'
+import SideNav from '../shared/AppSidenav'
 import Dashboard from './Dashboard'
+import AppFooter from '../shared/AppFooter'
+import { AppFooterData } from '../mocks/AppFooterData'
+import { ThreeDCubeSphere } from 'tabler-icons-react'
+import AppSidenav from '../shared/AppSidenav'
 
 interface WrapperProps {
-    title: string
     children: ReactNode
 }
 
-const Wrapper = ({ children, title }: WrapperProps) => {
+const Wrapper = ({ children }: WrapperProps) => {
     const theme = useMantineTheme()
     const [opened, setOpened] = useState(false)
     return (
@@ -36,7 +40,7 @@ const Wrapper = ({ children, title }: WrapperProps) => {
             asideOffsetBreakpoint="sm"
             fixed
             navbar={
-                <SideNav
+                <AppSidenav
                     p="md"
                     hiddenBreakpoint="sm"
                     hidden={!opened}
@@ -45,7 +49,7 @@ const Wrapper = ({ children, title }: WrapperProps) => {
             }
             footer={
                 <Footer height={60} p="md">
-                    Application footer
+                    <AppFooter links={AppFooterData.links} />
                 </Footer>
             }
             header={
@@ -69,7 +73,7 @@ const Wrapper = ({ children, title }: WrapperProps) => {
                                 mr="xl"
                             />
                         </MediaQuery>
-                        <TopNav user={UserData.user} title={title} />
+                        <AppNavbar user={UserData.user} />
                     </div>
                 </Header>
             }

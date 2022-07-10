@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
     createStyles,
     Overlay,
@@ -7,6 +7,8 @@ import {
     Button,
     Text,
     Group,
+    Tooltip,
+    Popover,
 } from '@mantine/core'
 
 const useStyles = createStyles((theme) => ({
@@ -72,6 +74,7 @@ const useStyles = createStyles((theme) => ({
 
 export default function Hero() {
     const { classes } = useStyles()
+    const [opened, setOpened] = useState(false)
 
     return (
         <div className={classes.hero}>
@@ -88,9 +91,29 @@ export default function Hero() {
                 </Text>
 
                 <Group>
-                    <Button size="xl" className={classes.control}>
-                        Get started
-                    </Button>
+                    <Popover
+                        opened={opened}
+                        onClose={() => setOpened(false)}
+                        target={
+                            <Button
+                                size="xl"
+                                className={classes.control}
+                                onMouseEnter={() => setOpened(true)}
+                                onMouseLeave={() => setOpened(false)}
+                                component="a"
+                                href="/home"
+                            >
+                                Get started
+                            </Button>
+                        }
+                        width={260}
+                        position="bottom"
+                        withArrow
+                    >
+                        <Text size="sm">
+                            Click on this to view something interesting
+                        </Text>
+                    </Popover>
                     <Button
                         size="xl"
                         className={classes.control}

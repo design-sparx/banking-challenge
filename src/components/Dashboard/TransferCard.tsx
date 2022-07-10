@@ -86,7 +86,7 @@ const TransferCard = ({ results }: TransferCardProps) => {
                 />
             </div>
             <Group mt="md">
-                <Button leftIcon={<Send />}>Send money</Button>
+                <Button leftIcon={<Send size={18} />}>Send money</Button>
                 <Button variant="subtle">Save as draft</Button>
             </Group>
         </Card>

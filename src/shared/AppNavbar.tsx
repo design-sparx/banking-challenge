@@ -12,9 +12,14 @@ import {
     Input,
     ActionIcon,
     Button,
+    Anchor,
+    TextInput,
+    useMantineTheme,
 } from '@mantine/core'
 import { useBooleanToggle } from '@mantine/hooks'
 import {
+    ArrowLeft,
+    ArrowRight,
     Bell,
     ChevronDown,
     CodeMinus,
@@ -27,6 +32,7 @@ import {
     Settings,
     Star,
     SwitchHorizontal,
+    ThreeDCubeSphere,
     Trash,
 } from 'tabler-icons-react'
 
@@ -107,37 +113,58 @@ const useStyles = createStyles((theme) => ({
         backgroundColor:
             theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
     },
+    search: {
+        '&:focus': {
+            width: 300,
+        },
+    },
 }))
 
-interface HeaderSimpleProps {
+interface AppNavProps {
     user: { name: string; image: string }
-    title: string
 }
 
-export default function TopNav({ user, title }: HeaderSimpleProps) {
+export default function AppNavbar({ user }: AppNavProps) {
     const [opened, toggleOpened] = useBooleanToggle(false)
-    const { classes, theme, cx } = useStyles()
+    const { classes, cx } = useStyles()
+    const theme = useMantineTheme()
     const [userMenuOpened, setUserMenuOpened] = useState(false)
 
     return (
         <div className={classes.header}>
-            <Button variant="subtle">
-                <Group>
-                    <CodeMinus />
-                    <Text>{title}</Text>
+            <Anchor component="a" href="/home">
+                <Group spacing="xs">
+                    <ThreeDCubeSphere size={18} />
+                    <Text weight={500}>Neta Bank</Text>
                 </Group>
-            </Button>
-            <Input
-                variant="default"
-                placeholder="search..."
-                icon={<Search />}
+            </Anchor>
+            <TextInput
+                icon={<Search size={18} />}
+                size="md"
+                className={classes.search}
+                rightSection={
+                    <ActionIcon
+                        size={32}
+                        radius="xl"
+                        color={theme.primaryColor}
+                        variant="filled"
+                    >
+                        {theme.dir === 'ltr' ? (
+                            <ArrowRight size={18} />
+                        ) : (
+                            <ArrowLeft size={18} />
+                        )}
+                    </ActionIcon>
+                }
+                placeholder="Search..."
+                rightSectionWidth={42}
             />
             <Group>
-                <ActionIcon>
-                    <MessageCircle />
+                <ActionIcon size="lg">
+                    <MessageCircle size={18} />
                 </ActionIcon>
-                <ActionIcon>
-                    <Bell />
+                <ActionIcon size="lg">
+                    <Bell size={18} />
                 </ActionIcon>
                 <Menu
                     size={260}
@@ -172,24 +199,6 @@ export default function TopNav({ user, title }: HeaderSimpleProps) {
                         </UnstyledButton>
                     }
                 >
-                    <Menu.Item
-                        icon={<Heart size={14} color={theme.colors.red[6]} />}
-                    >
-                        Liked posts
-                    </Menu.Item>
-                    <Menu.Item
-                        icon={<Star size={14} color={theme.colors.yellow[6]} />}
-                    >
-                        Saved posts
-                    </Menu.Item>
-                    <Menu.Item
-                        icon={
-                            <Message size={14} color={theme.colors.blue[6]} />
-                        }
-                    >
-                        Your comments
-                    </Menu.Item>
-
                     <Menu.Label>Settings</Menu.Label>
                     <Menu.Item icon={<Settings size={14} />}>
                         Account settings
@@ -197,7 +206,13 @@ export default function TopNav({ user, title }: HeaderSimpleProps) {
                     <Menu.Item icon={<SwitchHorizontal size={14} />}>
                         Change account
                     </Menu.Item>
-                    <Menu.Item icon={<Logout size={14} />}>Logout</Menu.Item>
+                    <Menu.Item
+                        component="a"
+                        href="/"
+                        icon={<Logout size={14} />}
+                    >
+                        Logout
+                    </Menu.Item>
 
                     <Divider />
 

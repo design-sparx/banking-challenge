@@ -63,9 +63,13 @@ interface HeaderActionProps {
         label: string
         links?: { link: string; label: string }[]
     }[]
+    handleAuthModalOpen: () => void
 }
 
-export default function TopNavbar({ links }: HeaderActionProps) {
+export default function TopNavbar({
+    links,
+    handleAuthModalOpen,
+}: HeaderActionProps) {
     const { classes } = useStyles()
     const [opened, toggleOpened] = useBooleanToggle(false)
     const items = links.map((link) => {
@@ -108,6 +112,7 @@ export default function TopNavbar({ links }: HeaderActionProps) {
                     <Button
                         variant="outline"
                         leftIcon={<UserCircle size={18} />}
+                        onClick={handleAuthModalOpen}
                     >
                         Login
                     </Button>

@@ -19,7 +19,7 @@ import { TransactionsData } from '../mocks/TransactionsData'
 
 const Dashboard = () => {
     return (
-        <Wrapper title="dashboard">
+        <Wrapper>
             <Container fluid>
                 <Stats data={StatsData.data}></Stats>
                 <Grid>

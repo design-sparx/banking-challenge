@@ -16,6 +16,7 @@ import {
     BrandYoutube,
     BrandInstagram,
     Send,
+    BrandLinkedin,
 } from 'tabler-icons-react'
 import ContactIcons from '../../shared/ContactIcons'
 
@@ -86,7 +87,7 @@ const useStyles = createStyles((theme) => ({
     },
 }))
 
-const social = [BrandTwitter, BrandYoutube, BrandInstagram]
+const social = [BrandTwitter, BrandYoutube, BrandInstagram, BrandLinkedin]
 
 export default function ContactForm() {
     const { classes } = useStyles()
