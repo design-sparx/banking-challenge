@@ -14,6 +14,7 @@ import CookiesBanner from '../shared/CookiesBanner'
 import AuthFormModal from '../components/Auth/AuthFormModal'
 import { ArrowUp } from 'tabler-icons-react'
 import { useWindowScroll } from '@mantine/hooks'
+import { Helmet } from 'react-helmet'
 
 const Landing = () => {
     const [cookiesOpen, setCookiesOpen] = useState(true)
@@ -34,6 +35,9 @@ const Landing = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Netabank | Home</title>
+            </Helmet>
             <TopNavbar
                 links={NavLinksData.links}
                 handleAuthModalOpen={handleAuthModalOpen}

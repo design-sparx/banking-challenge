@@ -12,6 +12,7 @@ import TopNavbar from '../shared/TopNavbar'
 import { FooterLinksData } from '../mocks/FooterLinksData'
 import Footer from '../shared/Footer'
 import { Home } from 'tabler-icons-react'
+import { Helmet } from 'react-helmet'
 
 const useStyles = createStyles((theme) => ({
     root: {
@@ -68,6 +69,9 @@ export default function Page404() {
 
     return (
         <>
+            <Helmet>
+                <title>Netabank | 404</title>
+            </Helmet>
             <TopNavbar
                 links={NavLinksData.links}
                 handleAuthModalOpen={handleAuthModalOpen}
