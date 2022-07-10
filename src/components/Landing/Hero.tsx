@@ -7,9 +7,9 @@ import {
     Button,
     Text,
     Group,
-    Tooltip,
     Popover,
 } from '@mantine/core'
+import { Link } from 'react-router-dom'
 
 const useStyles = createStyles((theme) => ({
     hero: {
@@ -100,8 +100,8 @@ export default function Hero() {
                                 className={classes.control}
                                 onMouseEnter={() => setOpened(true)}
                                 onMouseLeave={() => setOpened(false)}
-                                component="a"
-                                href="/home"
+                                component={Link}
+                                to="/home"
                             >
                                 Get started
                             </Button>

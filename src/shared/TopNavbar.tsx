@@ -1,26 +1,16 @@
 import React from 'react'
 import {
     createStyles,
-    Menu,
-    Center,
     Header,
     Container,
     Group,
     Button,
     Burger,
-    Code,
     Anchor,
-    Divider,
 } from '@mantine/core'
 import { useBooleanToggle } from '@mantine/hooks'
-import {
-    BuildingBank,
-    ChevronDown,
-    CloudDownload,
-    ThreeDCubeSphere,
-    User,
-    UserCircle,
-} from 'tabler-icons-react'
+import { CloudDownload, ThreeDCubeSphere, UserCircle } from 'tabler-icons-react'
+import { Link } from 'react-router-dom'
 
 const HEADER_HEIGHT = 60
 
@@ -75,10 +65,10 @@ export default function TopNavbar({
     const items = links.map((link) => {
         return (
             <Button
-                component="a"
+                component={Link}
                 variant="subtle"
                 key={link.label}
-                href={link.link}
+                to={link.link}
                 className={classes.link}
             >
                 {link.label}
@@ -100,9 +90,9 @@ export default function TopNavbar({
                         className={classes.burger}
                         size="sm"
                     />
-                    <Anchor href="/">
+                    <Anchor component={Link} to="/">
                         <Group>
-                            <BuildingBank />
+                            <ThreeDCubeSphere />
                             Neta Bank
                         </Group>
                     </Anchor>

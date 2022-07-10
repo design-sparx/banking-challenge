@@ -5,7 +5,6 @@ import {
     Box,
     Text,
     Group,
-    Paper,
     SimpleGrid,
     Card,
 } from '@mantine/core'

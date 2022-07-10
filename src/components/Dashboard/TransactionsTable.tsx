@@ -2,23 +2,15 @@ import React from 'react'
 import {
     createStyles,
     Table,
-    Progress,
     Anchor,
     Text,
     Group,
     ScrollArea,
     Card,
-    SimpleGrid,
     Button,
     ThemeIcon,
-    Highlight,
 } from '@mantine/core'
-import {
-    ArrowBack,
-    ArrowBarDown,
-    ArrowForwardUp,
-    Photo,
-} from 'tabler-icons-react'
+import { ArrowBack, ArrowForwardUp } from 'tabler-icons-react'
 
 const useStyles = createStyles((theme) => ({
     progressBar: {
@@ -57,7 +49,7 @@ interface TableReviewsProps {
 }
 
 export default function TransactionsTable({ data }: TableReviewsProps) {
-    const { classes, theme } = useStyles()
+    const { classes } = useStyles()
 
     const rows = data.map((row) => {
         const totalReviews = row.reviews.negative + row.reviews.positive

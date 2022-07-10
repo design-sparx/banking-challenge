@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Chart from 'react-apexcharts'
 import { ApexOptions } from 'apexcharts'
-import { Card, createStyles, Paper, Text } from '@mantine/core'
+import { createStyles, Paper, Text } from '@mantine/core'
 
 const useStyles = createStyles((theme) => ({
     title: {
