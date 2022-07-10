@@ -1,6 +1,7 @@
 {
   "name": "banking-challenge",
   "version": "0.1.0",
+  "homepage": "https://kelvink96ltd.github.io/banking-challenge",
   "private": true,
   "dependencies": {
     "@mantine/core": "^4.2.11",
@@ -26,6 +27,7 @@
     "react": "^18.2.0",
     "react-apexcharts": "^1.4.0",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "tabler-icons-react": "^1.52.0",
@@ -33,6 +35,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -59,6 +63,7 @@
   "devDependencies": {
     "@types/lodash": "^4.14.182",
     "eslint": "^8.19.0",
+    "gh-pages": "^4.0.0",
     "prettier": "^2.7.1"
   }
 }
