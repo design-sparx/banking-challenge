@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/banking-challenge/static/css/main.073c9b0a.css",
-    "main.js": "/banking-challenge/static/js/main.f78193e9.js",
+    "main.js": "/banking-challenge/static/js/main.70d01e86.js",
     "static/media/card-1.png": "/banking-challenge/static/media/card-1.83ff0009ec26f2977a89.png",
     "static/media/card-2.png": "/banking-challenge/static/media/card-2.f2c0370713af446888fa.png",
     "static/media/card-4.svg": "/banking-challenge/static/media/card-4.6882aaa2bbca055ccff3e05f6408032d.svg",
     "static/media/mobile_download.png": "/banking-challenge/static/media/mobile_download.0bee9ac9ac476e5d21a5.png",
     "index.html": "/banking-challenge/index.html",
     "main.073c9b0a.css.map": "/banking-challenge/static/css/main.073c9b0a.css.map",
-    "main.f78193e9.js.map": "/banking-challenge/static/js/main.f78193e9.js.map"
+    "main.70d01e86.js.map": "/banking-challenge/static/js/main.70d01e86.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.f78193e9.js"
+    "static/js/main.70d01e86.js"
   ]
 }
